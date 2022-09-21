@@ -1,0 +1,61 @@
+<!-- A helper template for the navbar, implemented using Bootstrap -->
+
+<!-- Creates a sticky navbar at the top of the display -->
+<nav class="navbar navbar-custom navbar-expand-md sticky-top">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        
+        <!-- Aligns items on the navbar right rather than the standard left alignment used below-->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link logo" href="{% url 'light:index' %}">light</a>
+            </li>
+        </ul>
+
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'light:about' %}">about</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'light:view_challenge' %}">challenges</a>
+            </li>
+       
+        <!-- Links that are only visible to users who are logged-in, limiting their access -->
+        {%if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'light:plan' %}">plan</a>
+            </li>
+        
+            <!-- A dropdown menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              themes
+                </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" id="sunset" href="/light/theme?theme=sunset">sunset</a>
+                        <a class="dropdown-item" id="sea" href="/light/theme?theme=sea">sea</a>
+                        <a class="dropdown-item" id="ruby" href="/light/theme?theme=ruby">ruby</a>
+                        <a class="dropdown-item" id="paprika" href="/light/theme?theme=paprika">paprika</a>
+                    </div>
+          </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'light:logout' %}">logout</a>
+            </li>
+
+        <!-- Links only visible to users who are not currently logged in -->
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'light:login' %}">login</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'light:register' %}">register</a>
+            </li>
+        {% endif %}
+             
+        </ul>
+    </div>
+</nav>
