@@ -1,0 +1,29 @@
+{% extends 'light/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Post Challenge
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1> Enter Details </h1>
+</div>
+
+<div class="formstyle">
+    <form id="challenge_form" method="post" action="{% url 'light:post_challenge' %}">
+
+        {% csrf_token %}
+        
+        <!-- Four separate forms are used to capture Challenge data in order to create intermediate tables later when a user joins a Challenge -->
+        {{ challenge_form.as_p}}        
+        {{ first_step.as_p }}
+        {{ second_step.as_p }}
+        {{ third_step.as_p}}
+
+        <input type="submit" name="submit" value="Post" />
+    </form>
+</div>
+
+
+{% endblock %}
