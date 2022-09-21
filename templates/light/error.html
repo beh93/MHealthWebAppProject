@@ -1,0 +1,15 @@
+{% extends 'light/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Login Failed
+{% endblock %}
+
+{% block body_block %}
+
+<br /><br />
+<h3 class="centered"> The login details you have supplied are incorrect.  Please check your details and try logging in <a href="{% url 'light:login' %}">try again.</a></h1>
+
+
+
+{% endblock %}
