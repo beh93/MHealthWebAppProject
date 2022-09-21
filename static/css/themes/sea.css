@@ -1,0 +1,18 @@
+:root {
+    --sea-bg-color: url("../images/background/bg2.png");
+    --navbar-color: #0d0046;
+    --navbar-text-color: rgb(33, 202, 143);
+    --task-bg-color: linear-gradient(rgba(35, 195, 147, 0.3), rgba(232, 226, 114, 0.3));
+    --task-hover:linear-gradient(rgba(35, 195, 147, 0.8), rgba(232, 226, 114, 0.8));
+    --round-theme-background: linear-gradient(#2415b3, #0dc295);
+
+  }
+  
+.sea {
+    --bg: var(--sea-bg-color);
+    --navbar: var(--navbar-color);
+    --navtext: var(--navbar-text-color);
+    --taskbg: var(--task-bg-color);
+    --taskhover: var(--task-hover);
+    --roundtheme: var(--round-theme-background);
+}
