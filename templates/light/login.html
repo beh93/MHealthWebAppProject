@@ -1,0 +1,25 @@
+{% extends 'light/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Login
+{% endblock %}
+
+{% block body_block %}
+
+<div class="formstyle">
+    <h1>Log in</h1>
+        <form id="login_form"  method="post" action="{% url 'light:login' %}">
+    
+            {% csrf_token %}
+            <input type="text" class="form-control" name="username" value="" size="50" placeholder="Enter Username"/>
+            <br />
+            <input type="password" class="form-control" name="password" value="" size="50" placeholder="Enter Password"/>
+            <br/>
+            <input type="submit" value="submit" />
+        </form>
+    </div>
+</div>
+<h3 class="centered">Don't have an account?  <a href = "{% url 'light:register' %}">Register here.</a></h3>
+
+{% endblock %}
