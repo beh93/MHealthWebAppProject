@@ -1,0 +1,18 @@
+:root {
+    --ruby-bg-color: url("../images/background/bg3.png");
+    --navbar-color: #6c004c;
+    --navbar-text-color: #cbc7a3;
+    --task-bg-color: linear-gradient(rgba(228, 215, 173, 0.5),rgba(174, 115, 194, 0.5));
+    --task-hover: linear-gradient(rgba(228, 215, 173, 1),rgba(174, 115, 194, 1));
+    --round-theme-background: linear-gradient(#430474, #c9007c);
+
+  }
+  
+.ruby {
+    --bg: var(--ruby-bg-color);
+    --navbar: var(--navbar-color);
+    --navtext: var(--navbar-text-color);
+    --taskbg: var(--task-bg-color);
+    --taskhover: var(--task-hover);
+    --roundtheme: var(--round-theme-background);
+}
