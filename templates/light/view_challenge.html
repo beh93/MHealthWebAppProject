@@ -1,0 +1,43 @@
+{% extends 'light/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Challenges
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1> Challenges </h1>
+</div>
+
+<!-- Displaying the name and details of all Challenges -->
+<div id = "challenge">
+    {% for challenge in challenges %}
+
+        <h2 class="emphasis">{{ challenge.title }}</h2> 
+        <hr />
+
+        <h4>{{ challenge.description }}</h4>
+        <br />
+        <br />
+
+        <a class="btn misc" href="/light/details?title={{ challenge.title }}">Details</a>
+
+    {% endfor %} 
+</div>
+
+
+<!-- A link to the form that will allow users to post their own Challenges via the 'light:post_challenge' url -->
+<div class="centered">
+
+    <!-- Users can only post plans if they are already authenticated -->
+    {% if user.is_authenticated %}
+        <a class="btn btn-info" href = "{% url 'light:post_challenge' %}">New Challenge</a>
+    
+    {% else %}
+        <h4>Want to post a challenge of your own?
+        <a href = "{% url 'light:login' %}">log in</a> or <a href = "{% url 'light:register' %}">register</a></h4>
+
+    {% endif %}
+</div>
+{% endblock %}
