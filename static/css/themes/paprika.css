@@ -1,0 +1,17 @@
+:root {
+    --paprika-bg-color: url("../images/background/bg4.png");
+    --navbar-color: #05511c;
+    --navbar-text-color: #eec582;
+    --task-bg-color: linear-gradient(rgba(192, 0, 0, 0.2),rgba(15, 27, 88, 0.2));
+    --task-hover: linear-gradient(rgba(192, 0, 0, 0.5),rgba(15, 27, 88, 0.5));
+    --round-theme-background: linear-gradient(#df6d15, #b1c900);
+}
+
+.paprika {
+    --bg: var(--paprika-bg-color);
+    --navbar: var(--navbar-color);
+    --navtext: var(--navbar-text-color);
+    --taskbg: var(--task-bg-color);
+    --taskhover: var(--task-hover);
+    --roundtheme: var(--round-theme-background);
+}
