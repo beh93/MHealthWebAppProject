@@ -1,0 +1,108 @@
+
+{% extends 'light/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    {{ challenge.title }} Details
+{% endblock %}
+
+{% block body_block %}
+<div>
+	
+  <h1> {{ challenge.title }} </h1>
+    
+</div>
+
+<div>
+    
+  <h2 class="themecolor">{{ challenge.description }}</h2>
+  <hr />
+    
+      <!-- The following three for-loops display the 'Complete' button for users who have joined the challenge -->
+    <h3 class="emphasis">{{ first_step }}</h3>
+  
+   
+    {% for participant in step_1_users %}  <!-- if the user is present in the list of users who have joined the Challenge -->
+      {% if participant.complete == False %} <!-- if the user has not yet marked this task as complete -->
+        <a class="btn btn-info" href="/light/update_step_1?step={{ first_step.id }}">Complete</a> <!-- display the option to mark task complete -->
+      {% endif %}
+    {% endfor %}
+    <br /><br /><br />
+
+    <h3 class="emphasis">{{ second_step }}</h3>
+
+    {% for participant in step_2_users %}
+    {% if user == participant.user_id %}
+        <a class="btn btn-info" href="/light/update_step_2?step={{ second_step.id }}">Complete</a>
+      {% endif %}
+    {% endfor %}<br /><br /><br />
+
+    <h3 class="emphasis">{{ third_step }}</h3>
+  
+    {% for participant in step_3_users %}
+      {% if user == participant.user_id %}
+        <a class="btn btn-info" href="/light/update_step_3?step={{ third_step.id }}">Complete</a>
+      {% endif %}
+   {% endfor %}<br /><br /><br />
+    
+
+<!-- This section is for display purposes only to help illustrate the intended outcome.  The code for moving users along the progress 
+  board does not work as intended and needs to be re-engineered in future work -->
+<div class="emphasis">
+
+  <table >
+    <tr>
+      <th></h1>Step 1</th>
+      <th>Step 2</th>
+      <th>Step 3</th>
+    </tr>
+
+    <tr>
+      <td>
+        Ginger<br />
+        {% for participant in step_1_users %}
+          {% if participant.complete == False %}
+            {{ participant.user_id}}
+          {% endif %}
+        {% endfor %}
+     </td>
+
+      <td>
+        sunny_dee<br />
+        anna<br />
+        {% for participant in step_1_users %}
+          {% if participant.complete == True %}
+            {{ participant.user_id}}
+          {% endif %}
+        {% endfor %}
+      </td>
+      
+      <td>
+        fred_is_not_on_fire
+      </td>
+    </tr>
+  </table>
+  
+  <br />
+    
+</div>
+<!-- End of display section -->
+
+
+<div class="centered">
+  <a class = "btn btn-info" href="{% url 'light:view_challenge' %}"> Back to Challenges </a>   
+
+  <br />
+
+        <a class = "btn btn-info" href="/light/join?title={{ challenge.title }}"> Join </a><br />
+        <a class = "btn btn-info" href="/light/leave?title={{ challenge.title }}"> Leave </a><br />
+
+  <!-- Displays the option to delete a Challenge if the current user is the Challenge owner -->
+  {% if challenge.owner == user %}
+    <br /><a class="centered emphasis" href="/light/delete?title={{ challenge.title }}"> Delete Challenge </a>
+  {% endif %}
+</div>
+</div>
+
+
+{% endblock %}
