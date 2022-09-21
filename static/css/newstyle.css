@@ -1,0 +1,384 @@
+/* Global styling */
+* {
+    margin: 0;
+    padding:0%;
+    box-sizing: border-box;
+    transition: all 0.5 ease;
+}
+
+body {
+    font-family:'Anek Kannada', sans-serif;
+    background: var(--bg) no-repeat center center fixed;
+    background-size: cover;
+}
+  
+div{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 5%;
+    color: var(--navbar);
+    padding-top: 3%;
+    text-align: center;
+ }
+
+ h2 {
+    text-align: center;
+ }
+
+ h3 {
+    color: var(--navbar);
+ }
+
+ h4 {
+    font-size: 20px;
+    color: white;
+ }
+
+ p {
+    font-size: 20px;
+    color: var(--navbar);
+ }
+
+ hr {
+    position: relative;
+    margin: 3% auto 3% auto;
+    height: 3px;
+    background-color: var(--navbar);
+ }
+
+ img {
+    padding-top: 2%;
+    border-radius: 30px;
+    width: 70%;
+}
+
+table {
+    padding-top: 2%;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px 0;
+}
+
+td {
+    width: 33.3%;
+    text-align: center;
+    border: 1px solid;
+    box-shadow: -5px 2px 5px rgb(53, 53, 53);
+    margin-bottom: 2%;
+}
+
+
+
+/* Miscellaneous styling used across site */
+.section {
+    margin-top: 2%;
+    box-shadow: -2px 5px 5px rgb(53, 53, 53);
+}
+
+.centered {
+    text-align: center;
+}
+
+.right-align{
+    text-align: right;
+}
+
+.emphasis {
+    color: white;
+}
+.themecolor {
+    color: var(--navbar);
+}
+
+
+
+/* Page layouts */
+.two-column {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+.three-column {
+    float: left;
+    width: 33%;
+    text-align: justified;
+    background-color: white;
+}
+
+.row {
+    margin:0%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both; /*clears the floats after the columns*/
+}
+
+
+
+ /* Navbar Styling */
+.navbar-custom {
+    background-color: var(--navbar);
+    color: var(--navtext);
+    width: 100%;
+}
+
+.navbar-custom .nav-link {
+    color: var(--navtext);
+}
+
+.navbar-custom .nav-link:hover {
+    color: white;
+}
+
+.logo {
+    font-family:'Sofia', sans-serif;
+    color: var(--navtext);
+    font-size: 32px;
+}  
+
+
+
+
+/* Index Page Styling */
+ #titleCard{
+    font-family:'Sofia', sans-serif;
+    color: var(--navbar);
+    font-size: 80px;
+    text-align: center;
+    padding-top:10%;
+}
+
+
+
+/* Form styling */
+.formstyle {
+    background-color: rgb(249, 245, 245, 0.4);
+    box-shadow: -5px 10px 5px rgb(65, 65, 65);
+    margin-top: 5%;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-bottom: 5%;
+    text-align: justify;  
+}
+
+input[type="password"], input[type="text"], input[type="email"] {
+    box-shadow: -2px 5px 5px rgb(53, 53, 53);
+    border: none;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin-top: 5%;
+    cursor: pointer;
+    position: relative;
+}
+  
+input[type="submit"]{
+    background-image: linear-gradient(#42A1EC, #0070C9);
+    position: relative;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    margin: 16px 2px;
+    cursor: pointer;
+    top:50%; 
+    left:37%;
+}
+
+
+
+/*Plan Page styling*/
+#ongoing {
+  background-image: var(--taskbg);
+}
+
+#ongoing:hover {
+  background-image: var(--taskhover);
+}
+
+#complete {
+  background-image: linear-gradient(rgba(54, 54, 54, 0.8), rgba(103, 103, 103, 0.8));
+  color: rgb(124, 124, 124);
+  padding: 3% 1% 3% 1%;
+}
+
+.outline {
+    border-color: var(--navcol);
+    padding-top: 3%;
+    box-shadow: -5px 2px 5px rgb(53, 53, 53);
+    border-radius: 25px;
+    margin-top: 3%;
+    margin-right: 30%;
+    margin-left: 30%;
+    text-align: center;
+    text-decoration: none;  
+}
+
+.complete-btn {
+    text-decoration: none;
+    color: white;
+}
+
+.complete-btn:hover {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/* Challenge Page Styling */
+#challenge {
+    margin: 2% 1% 1% 1%;
+    box-shadow: -2px 5px 5px rgb(53, 53, 53);
+    border: var(--navbar) solid;
+}
+
+.btn-info {
+    margin-top: 1%;
+    background-image: linear-gradient(#42A1EC, #0070C9);
+}
+
+
+
+/* About Page Styling */
+#disclaimer {
+  margin:3% 1% 1% 1%;
+  box-shadow: -3px 10px 5px rgb(65, 65, 65);
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+.clear-back{
+  background-color: white;
+  height: 20%;
+  margin-top: 3%;
+}
+
+
+
+/* Circular Element Styling */
+
+/* Circle centered with a box-shadow */
+.round-a {
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    border-radius: 50%;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-left: 40%;
+    box-shadow: -2px 5px 5px rgb(53, 53, 53);
+}
+
+/* Circle justified without box-shadow */
+.round-b {
+  width: 300px;
+  height: 300px;
+  line-height: 300px;
+  border-radius: 50%;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+}
+
+.round-purple {
+  background-image: linear-gradient(#430474, #c9007c);    
+}
+
+.round-blue {
+  background-image: linear-gradient(#2415b3, #0dc295);
+}
+
+.round-orange {
+  background-image: linear-gradient(#df6d15, #b1c900);    
+}
+
+.round-theme {
+  background-image: var(--roundtheme);    
+}
+
+
+/* About Page Transition Code */
+#fade-in {
+  font-style:italic;
+  font-size: 20px;
+  color: rgb(255, 241, 221);
+  text-align: center;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+      }
+  }
+  
+  span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+  }
+  
+  span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(6) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(7) {
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(8) {
+  animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(9) {
+  animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(10) {
+  animation: fade-in 0.8s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(11) {
+  animation: fade-in 0.8s 1.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  span:nth-child(12) {
+  animation: fade-in 0.8s 1.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  
+  @keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  }
+
