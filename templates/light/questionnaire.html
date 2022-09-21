@@ -1,0 +1,25 @@
+{% extends 'light/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Interests
+{% endblock %}
+
+{% block body_block %}
+
+<div class="formstyle">
+    <form id="interest_form" method="post" action="{% url 'light:questionnaire' %}">
+        <h1>Please Select Some Areas That You are Interested In</h1>
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+        {% for field in form.visible_fields %}
+            {{ field.errors }}
+            {{ field.help_text }}
+            {{ field }} <!-- Displaying all Categories stored in the database, so long as there are no errors-->
+        {% endfor %}
+        <input type="submit" name="submit" value="Answer Questionnaire" />
+    </form>
+</div>
+{% endblock %}
