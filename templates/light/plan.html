@@ -1,0 +1,81 @@
+{% extends 'light/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+   Plan
+{% endblock %}
+
+{% block body_block %}
+
+<div>
+	<h1> Your Plan </h1>
+</div>
+
+<div>
+	<p class="emphasis">Welcome to your plan!  All of the tasks below have been selected for you based on your particular interests and the areas you are looking to improve on
+	during your wellness journey. </p>	
+	
+	<p class="emphasis">The plan is designed to be completed in your own time - begin a task, explore the helpful resources below if you need a jumping-off point or want to learn more,
+	and mark them as complete as you go!</p>
+
+	<p class="emphasis">Do you need to update or add new interests to your plan? Do so <a href = "{% url 'light:questionnaire' %}">right here!</a></p>
+	
+	<hr />
+</div>
+
+<!-- Logic displaying completed Plan steps -->
+<div class="round-a round-theme">Completed</div> 
+{% for userplan in actions %} <!-- Retrieving all UserPlan objects (or Plan tasks) associated with the current user-->
+	{% if userplan.complete == True %}
+	
+	<h3 class="outline" id="complete">{{ userplan.action_id }}</h3> <!-- Displays the task text-->
+
+	{% endif %}
+{% endfor %}
+<br /><br /><br /><br />
+
+
+<!-- Logic for displaying ongoing Plan steps -->
+<div class="round-a round-theme">Ongoing</div>
+{% for userplan in actions %}
+	{% if userplan.complete == False %}
+	
+	<div class="outline" id = "ongoing">
+		<h3>{{ userplan.action_id }}</h3>
+		<!-- This button sends the plan name to the back-end via a URL so that a view can handle marking the step complete -->
+		<a class="complete-btn" href="/light/update_plan?step={{ userplan.id }}">Mark Complete</a>
+	</div>
+
+	{% endif %}
+{% endfor %}
+
+
+<div class="clear-back">
+	<h1> Resources</h1>
+	<br /><br />
+
+	<p>Are you looking to explore in even more detail?  Use the links below to take you to exciting new resources that can help you on your wellness journey!</p>
+	
+	<table>
+		<tr>
+			{% for resource in resources %}
+	   
+			<td>
+				<img src = "{{ resource.picture.url }}"><br /><br /> <a class="themelink" href="{{ resource.link }}">{{ resource.name }}</a>
+			</td>
+	   
+			<!-- This ends the table once the end of the for-loop has been reached -->
+			{% if forloop.last %}
+		</tr>
+
+			<!-- This organises data a new column, with up to 3 columns in total, until the end-of the for-loop is reached-->
+	   		{% else %}
+		 		{% if forloop.counter|divisibleby:"3" %} <!-- Structures resources into three columns using Django's divisibleby function -->
+		</tr><tr>
+
+		 {% endif %}
+	   {% endif %}
+	{% endfor %} 
+	</table>
+</div>
+{% endblock %}
