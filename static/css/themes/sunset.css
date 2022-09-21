@@ -1,0 +1,18 @@
+:root {
+    --sunset-bg-color: url("../images/background/bg1.png");
+    --navbar-color: #413c58;
+    --navbar-text-color: rgb(178, 217, 197);
+    --task-bg-color: linear-gradient(rgba(128, 78, 202, 0.5), rgba(102, 183, 141, 0.5));
+    --task-hover:linear-gradient(rgb(128, 78, 202), rgb(102, 183, 141));
+    --round-theme-background: linear-gradient(#430474, #c9007c);
+
+  }
+  
+.sunset {
+    --bg: var(--sunset-bg-color);
+    --navbar: var(--navbar-color);
+    --navtext: var(--navbar-text-color);
+    --taskbg: var(--task-bg-color);
+    --taskhover: var(--task-hover);
+    --roundtheme: var(--round-theme-background);
+}
