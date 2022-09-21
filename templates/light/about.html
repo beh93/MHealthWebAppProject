@@ -1,0 +1,111 @@
+{% extends 'light/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    About
+{% endblock %}
+
+{% block body_block %}
+<div>
+    <h1>About Light</h1>
+</div>
+
+<!-- Fade in text at the top of page -->
+<div>
+  <h2 id="fade-in">
+    <span>There's</span>
+    <span>a</span>
+    <span>crack</span>
+    <span>in</span>
+    <span>everything,</span>
+    <span>that's</span>
+    <span>how</span>
+    <span>the</span>
+    <span>light</span>
+    <span>gets</span>
+    <span>in</span></h2>
+
+    <h4 class="right-align"><span>-- someone wise</span></h4>
+    
+    <hr />
+</div>
+           
+<!-- Arranges the page layout into two columns -->
+<div class="row">
+    <div class="two-column section" >
+
+      <h2 class="emphasis">What We Do</h2>
+
+      <p class="emphasis"> light is a fun and friendly application that's happy to be here, helping you along on your journey to becoming a smilier, healthier
+        version of you!  If you're looking to improve on your wellness with no strings attached, all you need to do is <a href="{% url 'light:register' %}">sign-up</a> - it's free!</p>
+    
+    </div>
+
+  <div class="two-column section">
+
+    <h2 class="emphasis">How We Do It</h2>
+
+    <p class="emphasis">Whether you prefer to go it alone or collaborate with friends, light has lots of fun features to offer that can help you 
+      manage your stress, make the most of your day, set and achieve goals and increase your overall wellbeing through practices
+      of mindfulness and self-reflection.</p>
+  </div>
+</div>
+
+<br /><br /><br />
+
+
+
+<!-- Arranges the page layout into three columns -->
+<div class="clear-back">
+  <div class="row">
+    <div class="three-column clear-back" >
+
+      <span class="round-b round-purple">Plans</span><br /><br />
+      <p>Want some help learning how to build great habits and turn them into lifelong ones?  light's got you  covered - follow one of our custom
+        plans for a step-by-step breakdown of awesome ideas to get you started.  And the best part?  The plans are tailored to your unique interests, and yours alone.  Cool, right?</p>
+    
+    </div>
+
+    <div class="three-column clear-back">
+      <span class="round-b round-blue">Challenges</span><br /><br />
+
+      <p>Or if you prefer your fun with fellow lighters, maybe you'd like to check out our challenges instead.  Want to see what
+        goals others are setting for themselves?  Even better, want to take part and work towards a goal alongside a host of 
+        dedicated others to help motivate you on your way?  Join one of our challenges, see how other users are progressing through
+        the tasks to meet their goals, or even issue a challenge yourself with tasks created by none other than you!  You decide what's important.  The only limit
+        is your imagination (and the boundaries of the known scientific world).</p>
+    </div>
+
+    <div class="three-column clear-back">
+        <span class="round-b round-orange">Resources</span><br /><br />
+
+      <p>Choose from a fantastic range of available resources -</p>
+        <ul>
+            <li>You like to read?  Try one of our articles, ranging from the 'how-to's to 'do-not's</li>
+            <li> If you like to consume your content as you go about your day, then maybe a podcast is for you</li>
+            <li> Looking to take your wellness journey even further?  Then try one of our linked apps</li>
+        </ul>
+       <p> All of our resources are hand-picked for you.  From the start of your journey to the end - we'll be there, helping hands at
+        the ready.</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- Disclaimer -->
+<div id="disclaimer">
+    Light is not a clinical or diagnostic tool (no science here), but we still hope that you get something positive out of your experience with us.  While it may not be a replacement for mental health treatment, 
+    but it can be here whenever you need it.  If your mental health - or that of someone you know - is suffering, please reach out for
+    professional support.<br />
+
+    Some of the organisations listed below are waiting to help:<br />
+    
+    <a href="https://www.mind.org.uk/">Mind</a><br />
+    <a href="https://www.nhs.uk/mental-health/">NHS</a><br />
+    <a href="https://www.samh.org.uk/">SAMH (Scotland)</a><br />
+
+    Whatever you're going through, don't go through it alone.  You deserve a little more light in your life.
+
+</div>
+
+{% endblock %}
